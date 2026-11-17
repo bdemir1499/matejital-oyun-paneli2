@@ -24,6 +24,8 @@
             padding: 20px;
             display: flex;
             justify-content: center;
+            user-select: none;
+            -webkit-user-select: none;
         }
         .container {
             max-width: 500px;
@@ -40,16 +42,11 @@
             border: 3px solid var(--text-main);
             margin-bottom: 10px;
             object-fit: cover;
+            pointer-events: none;
         }
-        h1 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        p.bio {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-top: 5px;
-        }
+        h1 { margin: 0; font-size: 1.5rem; }
+        p.bio { color: var(--text-muted); font-size: 0.95rem; margin-top: 5px; }
+        
         .instruction-box {
             background-color: rgba(245, 158, 11, 0.1);
             border-left: 4px solid var(--accent-geo);
@@ -93,6 +90,7 @@
             margin-bottom: 10px;
             transition: all 0.2s;
             border-left: 4px solid transparent;
+            cursor: pointer;
         }
         .link-btn:last-child { margin-bottom: 0; }
         .link-btn:hover {
@@ -107,17 +105,15 @@
         .cat-geo .link-btn:hover { border-left-color: var(--accent-geo); }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
 <div class="container">
     <div class="profile-header">
-        <!-- Logo Linkinizi src kısmına ekleyebilirsiniz -->
-        <img src="https://via.placeholder.com/100" alt="Matejital" class="profile-img">
+        <img src="logo.png" alt="Matejital" class="profile-img">
         <h1>Bekir Demirel | Matejital</h1>
         <p class="bio">Kurulumsuz, tarayıcı tabanlı interaktif akıllı tahta materyalleri.</p>
     </div>
 
-    <!-- KULLANICI BİLGİLENDİRME NOTU -->
     <div class="instruction-box">
         💡 <strong>Nasıl Kullanılır?</strong><br>
         Linki almak için istediğiniz oyuna tıklayın. Oyun açıldığında adres çubuğundan linki kopyalayıp akıllı tahtanızda açabilirsiniz.
@@ -126,40 +122,69 @@
     <!-- GEOBACK VE 3D ARAÇLAR -->
     <div class="category cat-geo">
         <h2>🛠️ GeoBek & 3D Araçlar</h2>
-        <a href="https://geobek2-mat.vercel.app" target="_blank" class="link-btn">GeoBek Sanal Geometri Tahtası</a>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9nZW9iZWsyLW1hdC52ZXJjZWwuYXBw" onclick="nav(this)">GeoBek Sanal Geometri Tahtası</div>
     </div>
 
     <!-- 5. SINIF -->
     <div class="category cat-5">
         <h2>🟣 5. Sınıf Oyunları</h2>
-        <a href="https://bekrmatmt25.my.canva.site/ayn-duzlemdek-k-dogrunun-olu-turdu-u-ac-lar" target="_blank" class="link-btn">Aynı Düzlemde İki Doğrunun Oluşturduğu Açılar</a>
-        <a href="https://bekrmatmt25.my.canva.site/okgen-ve-elemanlar" target="_blank" class="link-btn">Çokgen ve Elemanları</a>
-        <a href="https://bekrmatmt25.my.canva.site/fener-le-okgen-av" target="_blank" class="link-btn">Fenerle Çokgen Avı</a>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9iZWtybWF0bXQyNS5teS5jYW52YS5zaXRlL2F5bi1kdXpsZW1kZWstay1kb2dydW51bi1vbHUtdHVyZHUtdS1hYy1sYXI=" onclick="nav(this)">Aynı Düzlemde İki Doğrunun Oluşturduğu Açılar</div>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9iZWtybWF0bXQyNS5teS5jYW52YS5zaXRlL29rZ2VuLXZlLWVsZW1hbmxhcg==" onclick="nav(this)">Çokgen ve Elemanları</div>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9iZWtybWF0bXQyNS5teS5jYW52YS5zaXRlL2ZlbmVyLWxlLW9rZ2VuLWF2" onclick="nav(this)">Fenerle Çokgen Avı</div>
     </div>
 
     <!-- 6. SINIF -->
     <div class="category cat-6">
         <h2>🔵 6. Sınıf Oyunları</h2>
-        <a href="https://bekrmatmt25.my.canva.site/6-s-n-f-deneysel-olas-l-k-71-sayfa" target="_blank" class="link-btn">Deneysel Olasılık Sayı Küpü</a>
-        <a href="https://bekrmatmt25.my.canva.site/2-5-ve-10-le-kalans-z-boluneb-lme" target="_blank" class="link-btn">2, 5 ve 10 ile Kalansız Bölünebilme</a>
-        <a href="https://bekrmatmt25.my.canva.site/ondal-k-g-sterim-yuvarlama-algoritmas" target="_blank" class="link-btn">Ondalık Gösterimlerde Yuvarlama Algoritması</a>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9iZWtybWF0bXQyNS5teS5jYW52YS5zaXRlLzYtcy1uLWYtZGVuZXlzZWwtb2xhcy1sLWstNzEtc2F5ZmE=" onclick="nav(this)">Deneysel Olasılık Sayı Küpü</div>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9iZWtybWF0bXQyNS5teS5jYW52YS5zaXRlLzItNS12ZS0xMC1sZS1rYWxhbnMtei1ib2x1bmViLWxtZQ==" onclick="nav(this)">2, 5 ve 10 ile Kalansız Bölünebilme</div>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9iZWtybWF0bXQyNS5teS5jYW52YS5zaXRlL29uZGFsLWstZy1zdGVyaW0teXV2YXJsYW1hLWFsZ29yaXRtYXM=" onclick="nav(this)">Ondalık Gösterimlerde Yuvarlama Algoritması</div>
     </div>
 
     <!-- 7. SINIF -->
     <div class="category cat-7">
         <h2>🔴 7. Sınıf Oyunları</h2>
-        <a href="https://bekrmatmt25.my.canva.site/rasyonel-say-lar-say-do-rusunda-g-stermek" target="_blank" class="link-btn">Rasyonel Sayıları Sayı Doğrusunda Göstermek</a>
-        <a href="https://bekrmatmt25.my.canva.site/rasyonel-say-larda-toplama-karma-uygulama" target="_blank" class="link-btn">Rasyonel Sayılarda Toplama ve Çıkarma</a>
-        <a href="https://bekrmatmt25.my.canva.site/7-s-n-f-rasyonel-say-lar-e-le-tirme-sayfa-60" target="_blank" class="link-btn">Rasyonel Sayılar Eşleştirme (Sayfa 60)</a>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9iZWtybWF0bXQyNS5teS5jYW52YS5zaXRlL3Jhc3lvbmVsLXNheS1sYXItc2F5LWRvLXJ1c3VuZGEtZy1zdGVybWVr" onclick="nav(this)">Rasyonel Sayıları Sayı Doğrusunda Göstermek</div>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9iZWtybWF0bXQyNS5teS5jYW52YS5zaXRlL3Jhc3lvbmVsLXNheS1sYXJkYS10b3BsYW1hLWthcm1hLXV5Z3VsYW1h" onclick="nav(this)">Rasyonel Sayılarda Toplama ve Çıkarma</div>
+        <div class="link-btn" data-hx="aHR0cHM6Ly9iZWtybWF0bXQyNS5teS5jYW52YS5zaXRlLzctcy1uLWYtcmFzeW9uZWwtc2F5LWxhci1lLWxlLXRpcm1lLXNheWZhLTYw" onclick="nav(this)">Rasyonel Sayılar Eşleştirme (Sayfa 60)</div>
     </div>
 
-    <!-- 8. SINIF (Hazır olduğunda linkleri ekleyebilirsiniz) -->
+    <!-- 8. SINIF (Boş Şablon) -->
     <div class="category cat-8">
         <h2>🟢 8. Sınıf Oyunları</h2>
-        <a href="LİNK_EKLENECEK" target="_blank" class="link-btn">Yakında Eklenecek...</a>
+        <div class="link-btn" data-hx="" onclick="nav(this)">Yakında Eklenecek...</div>
     </div>
 
 </div>
+
+<!-- Güvenlik ve Şifre Çözücü JavaScript Kodları -->
+<script>
+    function nav(el) {
+        var hx = el.getAttribute('data-hx');
+        if (hx && hx !== "") {
+            var url = atob(hx);
+            window.open(url, '_blank');
+        }
+    }
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+    };
+</script>
 
 </body>
 </html>
